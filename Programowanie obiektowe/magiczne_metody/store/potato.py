@@ -1,8 +1,9 @@
+from dataclasses import dataclass
+
 class Potato:
-    def __init__(self, brand, size, price):
-        self.brand = brand
-        self.size = size
-        self.price = price
+    brand: str
+    size: str
+    price: float
     def price_calculator(self, quantity):
         return quantity * self.price
     def __repr__(self):

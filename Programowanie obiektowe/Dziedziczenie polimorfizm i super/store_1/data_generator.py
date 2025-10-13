@@ -1,5 +1,5 @@
 import random
-from .product import Product
+from .product import Product, ProductCategory
 from .order_element import OrderElement
 from .order import  Order
 
@@ -15,10 +15,11 @@ def order_generator(number_of_products=None):
     order_elements = []
     for product in range(number_of_products):
         name = f"Produkt nr. {product}"
-        category = f"Kategoria nr. {product}"
+        category = ProductCategory.FOOD
         random_price = random.randint(MIN_PRICE, MAX_PRICE)
         price = random_price
-        product = Product(name, category, price)
+        identifier = random.randint(1, 1000)
+        product = Product(name, category, price, identifier)
         quan = random.randint(MIN_ELEMENTS_QUAN, MAX_ELEMENTS_QUAN)
         order_elements.append(OrderElement(product, quan))
 

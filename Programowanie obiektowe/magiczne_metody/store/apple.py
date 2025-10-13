@@ -1,8 +1,9 @@
+from dataclasses import dataclass
+@dataclass
 class Apple:
-    def __init__(self, brand, price, size):
-        self.brand = brand
-        self.price = price
-        self.size = size
+    brand: str
+    size: str
+    price: float
     def price_calculator(self, quantity):
         return quantity * self.price
     def __repr__(self):

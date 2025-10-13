@@ -1,11 +1,11 @@
+from dataclasses import dataclass
 from .tax_calculator import TaxCalculator
+from .product import Product
 
-
+@dataclass
 class OrderElement:
-    def __init__(self, product, quantity):
-        self.product = product
-        self.quantity = quantity
-
+    product: Product
+    quantity: int
 
     def price_calculator(self):
         return self.product.price * self.quantity
@@ -14,6 +14,5 @@ class OrderElement:
         result = f' {self.product.__str__()}\n ilosc {self.quantity} podatek {TaxCalculator.calculate_tax(self)}'
         return result
 
-    def __eq__(self, other):
-        return self.product == other.product and self.quantity == other.quantity
+
 

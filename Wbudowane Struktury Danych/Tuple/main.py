@@ -1,0 +1,13 @@
+human_info = ("Bob", "Kowalski", 35)
+print(human_info)
+elo = ('paw', 'golab')
+new_human_info = human_info.__add__(elo)
+# print(new_human_info)
+# print(human_info)
+# print(id(new_human_info))
+# print(id(human_info))
+
+print(human_info[0])
+print(human_info[1])
+print(human_info[2])
+print(len(human_info))
